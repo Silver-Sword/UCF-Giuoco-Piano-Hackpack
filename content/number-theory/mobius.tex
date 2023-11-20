@@ -19,6 +19,21 @@ Dirichlet convolution of multiplicative functions $f$ and $g$ is multiplicative,
     \end{tabular}
 \end{center}
 $\pi(x) = \sum_{n \leq x} (\omega * \mu)(n)$, $\pi = $ prime counting function, $\omega = $ num. of prime factors \\
+
+\subsection{From kactl}
+\[
+	\mu(n) = \begin{cases} 0 & n \textrm{ is not square free}\\ 1 & n \textrm{ has even number of prime factors}\\ -1 & n \textrm{ has odd number of prime factors}\\\end{cases}
+\]
+  Mobius Inversion:
+  \[ g(n) = \sum_{d|n} f(d) \Leftrightarrow f(n) = \sum_{d|n} \mu(d)g(n/d) \]
+  Other useful formulas/forms:
+
+  $ \sum_{d | n} \mu(d) = [ n = 1] $ (very useful)
+
+  $ g(n) = \sum_{n|d} f(d) \Leftrightarrow f(n) = \sum_{n|d} \mu(d/n)g(d)$
+
+ $ g(n) = \sum_{1 \leq m \leq n} f(\left\lfloor\frac{n}{m}\right \rfloor ) \Leftrightarrow f(n) = \sum_{1\leq m\leq n} \mu(m)g(\left\lfloor\frac{n}{m}\right\rfloor)$
+
 \subsection{Möbius Inversion Formula}
     If for any two functions $f, g : \mathbb{N} \to \mathbb{C}$, $g(n) = \sum_{d \mid n} f(n)$,
     \[ f(n) = (\mu * g)(n) = \sum_{d \mid n} \mu(d) g \left(\frac{n}{d}\right) \]

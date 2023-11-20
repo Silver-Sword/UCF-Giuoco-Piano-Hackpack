@@ -1,18 +1,24 @@
 /**
- * Description: Maintains union of disjoint sets.
- * Time: $O(\alpha(n))$ amortized
+ * Author: Lukas Polacek
+ * Date: 2009-10-26
+ * License: CC0
+ * Source: folklore
+ * Description: Disjoint-set data structure.
+ * Time: $O(\alpha(N))$
  */
-struct DSU {
-	vector<int> s;
-	DSU(int n): s(n, -1) {}
-	int find(int i) { return s[i] < 0 ? i : s[i] = find(s[i]); }
+#pragma once
+
+struct UF {
+	vi e;
+	UF(int n) : e(n, -1) {}
+	bool same(int a, int b) { return find(a) == find(b); }
+	int size(int x) { return -e[find(x)]; }
+	int find(int x) { return e[x] < 0 ? x : e[x] = find(e[x]); }
 	bool join(int a, int b) {
 		a = find(a), b = find(b);
 		if (a == b) return false;
-		if (s[a] > s[b]) swap(a, b);
-		s[a] += s[b], s[b] = a;
+		if (e[a] > e[b]) swap(a, b);
+		e[a] += e[b]; e[b] = a;
 		return true;
 	}
-	int size(int i) { return -s[find(i)]; }
-	bool same(int a, int b) { return find(a) == find(b); }
 };
