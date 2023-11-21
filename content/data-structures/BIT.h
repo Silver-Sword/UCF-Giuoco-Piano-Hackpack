@@ -12,9 +12,9 @@
  */
 #pragma once
 
-struct FT {
+struct BIT {
 	vector<ll> s;
-	FT(int n) : s(n) {}
+	BIT(int n) : s(n) {}
 	void update(int pos, ll dif) { // a[pos] += dif
 		for (; pos < sz(s); pos |= pos + 1) s[pos] += dif;
 	}

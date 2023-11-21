@@ -4,13 +4,13 @@
  * Time: $O(\log^k n)$ 
  * Status: Tested
  */
-template<class T, int... Ns> struct BIT {
+template<class T, int... Ns> struct KDBIT {
 	T val = 0;
 	void update(T v) { val += v; }
 	T query() { return val; }
 };
-template<class T, int N, int... Ns> struct BIT<T, N, Ns...> {
-	BIT<T, Ns...> bit[N + 1];
+template<class T, int N, int... Ns> struct KDBIT<T, N, Ns...> {
+	KDBIT<T, Ns...> bit[N + 1];
 	// map<int, BIT<T, Ns...>> bit; // if the mem use is too high
 	template<class... Args> void update(int i, Args... args) {
 		for (i++; i <= N; i += i & -i) bit[i].update(args...);

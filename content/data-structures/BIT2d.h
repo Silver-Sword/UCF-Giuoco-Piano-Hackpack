@@ -10,11 +10,11 @@
  */
 #pragma once
 
-#include "FenwickTree.h"
+#include "BIT.h"
 
-struct FT2 {
-	vector<vi> ys; vector<FT> ft;
-	FT2(int limx) : ys(limx) {}
+struct BIT2D {
+	vector<vi> ys; vector<BIT> ft;
+	BIT2D(int limx) : ys(limx) {}
 	void fakeUpdate(int x, int y) {
 		for (; x < sz(ys); x |= x + 1) ys[x].push_back(y);
 	}
