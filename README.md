@@ -1,4 +1,4 @@
-# UCF Guioco Piano C++ Hackpack
+# UCF Giuoco Piano C++ Hackpack
 
 - PDF: [kactl.pdf](https://github.com/ucf-programming-team/hackpack-cpp/releases/download/latest/kactl.pdf)
 - Hackpack cloned from [UCF Hackpack](https://github.com/ucf-programming-team/hackpack-cpp) 
